@@ -3,18 +3,23 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:5173'
+}))
 app.use(express.json())
 
-const port = 5000
-
+const authenticateToken = require('./middleware')
+const userRoutes = require('./users')
 const authRoutes = require('./auth')
+
+app.use('/users', userRoutes)
 app.use('/auth', authRoutes)
 
 app.get('/', (req, res) => {
-    res.json({message: 'HackMate API is running'})
+  res.json({ message: 'HackMate API is running' })
 })
 
+const port = 5000
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+  console.log(`Server is running on port ${port}`)
 })
