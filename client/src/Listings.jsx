@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BASE_URL from "./api";
 
 function Listings() {
     const [listings, setListings] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/listings')
+        axios.get(`${BASE_URL}/listings`)
             .then(response => setListings(response.data))
             .catch(error => console.error('Error fetching listings:', error));
     }, []);

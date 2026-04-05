@@ -1,6 +1,7 @@
 import { useState, useEffect, use} from 'react'
 import axios  from 'axios'
 import { Link } from 'react-router-dom'
+import BASE_URL from './api'
 
 function Register() {
     const [name, setName] = useState('')
@@ -9,7 +10,7 @@ function Register() {
     const [college, setCollege] = useState('')
 
     function handleSubmit() {
-        axios.post('http://localhost:5000/auth/register', {
+        axios.post(`${BASE_URL}/auth/register`, {
            name, email, password, college
         })
         .then(data => {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import BASE_URL from './api'
 
 function Profile() {
 const [editing, setEditing] = useState(false)
@@ -14,7 +15,7 @@ const [linkedin, setLinkedin] = useState('')
         const token = localStorage.getItem('token')
         console.log('Token:', token) // Debugging line to check if token is retrieved
         if (token) {
-            axios.get('http://localhost:5000/users/me', {
+            axios.get(`${BASE_URL}/users/me`, {
                 headers: {Authorization: token}
             })
             .then(res => {

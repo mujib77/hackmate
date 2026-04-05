@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import BASE_URL from './api'
 
 function Login() {
     const [email, setEmail] = useState('')
@@ -9,7 +10,7 @@ function Login() {
     const navigate = useNavigate()
 
     function handleSubmit() {
-        axios.post('http://localhost:5000/auth/login', {
+        axios.post(`${BASE_URL}/auth/login`, {
             email, password
         })
         .then(res => {

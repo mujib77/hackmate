@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import BASE_URL from "./api";
 
 function CreateListing() {
     const [hackathonName, setHackathonName] = useState("");
@@ -11,7 +12,7 @@ function CreateListing() {
 
 
     const handleSubmit = () => {
-        axios.post('http://localhost:5000/listings', {
+        axios.post(`${BASE_URL}/listings`, {
             hackathon_name: hackathonName,
             description: description,
             roles_needed: rolesNeeded
