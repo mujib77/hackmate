@@ -2,11 +2,13 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const listingsRoutes = require('./listings')
+
+app.use(express.json())
 
 app.use(cors({
   origin: 'http://localhost:5173'
 }))
-app.use(express.json())
 
 const authenticateToken = require('./middleware')
 const userRoutes = require('./users')
@@ -14,6 +16,7 @@ const authRoutes = require('./auth')
 
 app.use('/users', userRoutes)
 app.use('/auth', authRoutes)
+app.use('/listings', listingsRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: 'HackMate API is running' })
