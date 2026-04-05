@@ -21,72 +21,97 @@ function Register() {
         })
     }  
 
-    return (
-  <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
 
-    {/* Background blobs */}
-    <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
-    <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-600 rounded-full blur-3xl opacity-20"></div>
+      {/* 🌌 Glow background */}
+      <div className="absolute w-[500px] h-[500px] bg-purple-600 rounded-full blur-[200px] opacity-30 top-[-100px] left-[-100px]"></div>
+      <div className="absolute w-[400px] h-[400px] bg-pink-600 rounded-full blur-[180px] opacity-30 bottom-[-100px] right-[-100px]"></div>
 
-    <div className="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-10 rounded-3xl w-full max-w-md border border-gray-700 shadow-2xl">
+      {/* 🔥 Glass Card */}
+      <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 w-full max-w-md shadow-[0_0_40px_rgba(168,85,247,0.4)]">
 
-      {/* Heading */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-black text-white mb-2">Create Account 🚀</h1>
-        <p className="text-gray-400">Join HackMate and find your team</p>
+        <h1 className="text-3xl font-bold text-white text-center mb-2">
+          Create Account
+        </h1>
+        <p className="text-gray-300 text-center mb-6 text-sm">
+          Join HackMate and find your team 🚀
+        </p>
+
+        {/* Name */}
+        <div className="mb-4">
+          <label className="text-gray-300 text-sm">Full Name</label>
+          <div className="mt-1 flex items-center bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-purple-500">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="bg-transparent outline-none text-white w-full placeholder-gray-400"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="mb-4">
+          <label className="text-gray-300 text-sm">Email Address</label>
+          <div className="mt-1 flex items-center bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-purple-500">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="bg-transparent outline-none text-white w-full placeholder-gray-400"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Password */}
+        <div className="mb-4">
+          <label className="text-gray-300 text-sm">Password</label>
+          <div className="mt-1 flex items-center bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-purple-500">
+            <input
+              type="password"
+              placeholder="Create a password"
+              className="bg-transparent outline-none text-white w-full placeholder-gray-400"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* College */}
+        <div className="mb-6">
+          <label className="text-gray-300 text-sm">College</label>
+          <div className="mt-1 flex items-center bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-purple-500">
+            <input
+              type="text"
+              placeholder="Enter your college"
+              className="bg-transparent outline-none text-white w-full placeholder-gray-400"
+              value={college}
+              onChange={(e) => setCollege(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Button */}
+        <button
+          onClick={handleSubmit}
+          className="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(236,72,153,0.6)]"
+        >
+          Create Account
+        </button>
+
+        {/* Bottom */}
+        <p className="text-gray-400 text-center mt-6 text-sm">
+          Already have an account?{" "}
+          <Link to="/login" className="text-purple-400 hover:underline">
+            Login
+          </Link>
+        </p>
       </div>
-
-      {/* Inputs */}
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="w-full bg-gray-800 text-white placeholder-gray-500 border border-gray-700 rounded-xl px-4 py-3 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-      />
-
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full bg-gray-800 text-white placeholder-gray-500 border border-gray-700 rounded-xl px-4 py-3 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-      />
-
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="w-full bg-gray-800 text-white placeholder-gray-500 border border-gray-700 rounded-xl px-4 py-3 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-      />
-
-      <input
-        type="text"
-        placeholder="College"
-        value={college}
-        onChange={(e) => setCollege(e.target.value)}
-        className="w-full bg-gray-800 text-white placeholder-gray-500 border border-gray-700 rounded-xl px-4 py-3 mb-6 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-      />
-
-      {/* Button */}
-      <button
-        onClick={handleSubmit}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 rounded-xl transition-all duration-200 shadow-lg"
-      >
-        Register →
-      </button>
-
-      {/* Footer */}
-      <p className="text-gray-500 text-center mt-6 text-sm">
-        Already have an account?{" "}
-        <Link to="/login" className="text-blue-400 hover:text-blue-300 font-medium">
-          Login here
-        </Link>
-      </p>
     </div>
-  </div>
-)
+  )
 }
 
 export default Register
