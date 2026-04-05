@@ -15,7 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/listings" element={<listings />} />
+        <Route path="/listings" element={<Listings />} />
         <Route path="/create-listing" element={<ProtectedRoute><CreateListing /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
