@@ -7,7 +7,7 @@ const listingsRoutes = require('./listings')
 app.use(express.json())
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: '*'
 }))
 
 const authenticateToken = require('./middleware')
