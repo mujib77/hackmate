@@ -1,31 +1,49 @@
-# HackMate - Server
+# HackMate 🚀
 
-Backend API for HackMate, a platform to find hackathon teammates.
+**Find your perfect hackathon team.**
 
-## What I learned
-- Setting up Express with multiple route files
-- User registration with bcrypt password hashing
-- User login with JWT token generation
-- Environment variables and security best practices
-- Connecting Express to PostgreSQL
+HackMate connects developers, designers, and ML engineers looking for teammates for hackathons. Post a listing, browse open teams, and build something great together.
 
-## API Routes
-- POST `/auth/register` - Register a new user
-- POST `/auth/login` - Login and receive JWT token
+🌐 **Live:** https://hackmate-nu.vercel.app
+
+---
+
+## Features
+
+- User registration and login with JWT authentication
+- Secure password hashing with bcrypt
+- Create and browse hackathon team listings
+- Edit your profile with skills, bio, and social links
+- Protected routes — only logged in users can post
+- Clean dark UI built with Tailwind CSS
 
 ## Tech Stack
-- Node.js
-- Express.js
-- PostgreSQL
-- bcrypt
-- jsonwebtoken
-- dotenv
 
-## How to run
+**Frontend:** React, Vite, Tailwind CSS, React Router, Axios
+
+**Backend:** Node.js, Express.js, PostgreSQL (Neon), JWT, bcrypt
+
+**Deployment:** Vercel (frontend), Railway (backend)
+
+## Running Locally
+
+**Backend:**
+```bash
 cd server
 npm install
 nodemon index.js
+```
 
-## Note
-Requires PostgreSQL running locally with a database called `hackmate`.
-Create a `.env` file with your database credentials before running.
+**Frontend:**
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Create a `.env` file in the server folder with your database credentials before running.
+
+
+---
+
+Built by [Mujib](https://github.com/mujib77)
