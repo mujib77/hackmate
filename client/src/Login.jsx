@@ -11,7 +11,8 @@ function Login() {
 
     function handleSubmit() {
         axios.post(`${BASE_URL}/auth/login`, {
-            email, password
+            email,
+            password
         })
         .then(res => {
             localStorage.setItem('token', res.data.token)

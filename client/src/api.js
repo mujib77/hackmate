@@ -1,3 +1,3 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL
+const BASE_URL = "https://hackmate-production-f667.up.railway.app"
 
 export default BASE_URL
