@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -37,7 +36,7 @@ const [linkedin, setLinkedin] = useState('')
 
     function handleUpdate() {
     const token = localStorage.getItem('token')
-    axios.put('http://localhost:5000/users/me', {
+    axios.put(`${BASE_URL}/users/me`, {
         bio,
         skills,
         github,
