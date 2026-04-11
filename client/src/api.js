@@ -1,3 +1,3 @@
-const BASE_URL = "https://hackmate-production-f667.up.railway.app"
+const BASE_URL = VITE_BASE_URL || 'http://localhost:5000/api'
 
 export default BASE_URL
