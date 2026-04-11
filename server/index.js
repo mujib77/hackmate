@@ -7,7 +7,7 @@ const listingsRoutes = require('./listings')
 app.use(express.json())
 
 app.use(cors({
-  origin: 'https://hackmate-nu.vercel.app'
+  origin: '*'
 }))
 
 const authenticateToken = require('./middleware')
