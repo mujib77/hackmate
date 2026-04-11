@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const BASE_URL = "https://hackmate-production.up.railway.app"
+const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
 
 function CreateListing() {
     const [hackathonName, setHackathonName] = useState("");
